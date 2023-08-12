@@ -16,19 +16,6 @@ import jakarta.persistence.TypedQuery;
 
 
 public class CardDAO {
-	public CardBase getCard(int id) {
-
-        Transaction transaction = null;
-        CardBase c = null;
-        
-        Session session = HibernateUtils.getSessionFactory().openSession();
-        transaction = session.beginTransaction();
-            
-        c = session.get(CardBase.class, id);
-
-        transaction.commit();
-        return c;
-    }
 	
     public List < PlayerCard > getAllCards() {
 
@@ -45,6 +32,45 @@ public class CardDAO {
         return listOfCards;
     }
     
+    private Predicate generateInvestigatorClassPredicate(frmSearchCards frm, CriteriaBuilder cb, Root<PlayerCard> root) {
+
+        ArrayList<Predicate> pClasses = new ArrayList<Predicate>();
+        
+        
+        if (frm.getIsGuardian()==1)
+        	 pClasses.add(cb.equal(root.get("isGuardian"), frm.getIsGuardian()));        
+        if (frm.getIsSeeker()==1)
+       	 	pClasses.add(cb.equal(root.get("isSeeker"), frm.getIsSeeker()));
+        if (frm.getIsRogue()==1)
+        	pClasses.add(cb.equal(root.get("isRouge"), frm.getIsRogue()));
+        if (frm.getIsMystic()==1)
+        	pClasses.add(cb.equal(root.get("isMystic"), frm.getIsMystic()));
+        if (frm.getIsSurvivor()==1)
+        	pClasses.add(cb.equal(root.get("isSurvivor"), frm.getIsSurvivor()));
+        
+        if (frm.getIsNeutral() == 1) {
+            Predicate pNeutral = 
+            		cb.and(
+            				cb.equal(root.get("isGuardian"), 0), 
+            				cb.equal(root.get("isSeeker"), 0),
+            				cb.equal(root.get("isMystic"), 0),
+            				cb.equal(root.get("isRogue"), 0),
+            				cb.equal(root.get("isSurvivor"), 0)
+            				);
+            pClasses.add(pNeutral);
+        }
+        
+        Predicate pClass = null;
+        if (pClasses.size()>0)
+        {
+        	pClass = pClasses.get(0);
+        	for (int i=1;i<pClasses.size();i++)
+        		pClass = cb.or(pClasses.get(i), pClass);
+        
+        }        
+        
+        return pClass;
+    }
     
     public List < PlayerCard > searchCards(frmSearchCards frm) {
 
@@ -69,45 +95,26 @@ public class CardDAO {
         CriteriaBuilder cb = session.getCriteriaBuilder();
         CriteriaQuery<PlayerCard> cr = cb.createQuery(PlayerCard.class);
         Root<PlayerCard> root = cr.from(PlayerCard.class);
+        
+        // DO NOT DELETE - it is good for JOIN only , not FETCH 
         //Join<PlayerCard, CardBase> jPlayerCard_CardBase = root.join(PlayerCard_.card_base);
-        root.fetch("card_base");
+        
+        
+        root.fetch("card");
         //cr.select(root);
 
-        System.out.println("[INFO] Form:  " + frm.toString());
+        System.out.println("[INFO] frmSearchCards: \n" + frm.toString());
         
         ArrayList<Predicate> preds = new ArrayList<Predicate>();
         
         // Generate predicates for investigator's class filter 
-        
-        ArrayList<Predicate> pClasses = new ArrayList<Predicate>();
-        
-        
-        if (frm.getIsGuardian()==1)
-        	 pClasses.add(cb.equal(root.get("is_guardian"), frm.getIsGuardian()));        
-        if (frm.getIsSeeker()==1)
-       	 	pClasses.add(cb.equal(root.get("is_seeker"), frm.getIsSeeker()));
-        if (frm.getIsRouge()==1)
-        	pClasses.add(cb.equal(root.get("is_rouge"), frm.getIsRouge()));
-        if (frm.getIsMystic()==1)
-        	pClasses.add(cb.equal(root.get("is_mystic"), frm.getIsMystic()));
-        if (frm.getIsSurvivor()==1)
-        	pClasses.add(cb.equal(root.get("is_survivor"), frm.getIsSurvivor()));
-
-        Predicate pClass = null;
-        if (pClasses.size()>0)
-        {
-        	pClass = pClasses.get(0);
-        	for (int i=1;i<pClasses.size();i++)
-        		pClass = cb.or(pClasses.get(i), pClass);
-        
-        	preds.add(pClass);
-        }
-        
-        // End of generating investigator's class predicates 
+        Predicate pClass = generateInvestigatorClassPredicate(frm,cb,root);
+        if (pClass != null)
+        	preds.add(pClass);        	
 
         // AND title LIKE %frm.title% 
         if (frm.getTitle()!=null && !frm.getTitle().trim().isEmpty()) {
-        	preds.add(cb.like(root.get("card_base").get("title"), "%"+frm.getTitle()+"%"));
+        	preds.add(cb.like(root.get("card").get("title"), "%"+frm.getTitle()+"%"));
         }
         
         // AND cost = frm.cost 

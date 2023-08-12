@@ -26,15 +26,14 @@ CREATE TABLE card(
 
 CREATE TABLE player_card(
 	id integer NOT NULL, 
-    cost tinyint DEFAULT 0,			# resource cost to play 
-    exp tinyint DEFAULT 0, 			# experience pts
-    sub_type tinyint DEFAULT -1, 	# -1 = no type (usually used by weakness cards), 0 = asset, 1 = event, 2 = skill
-	is_guardian tinyint DEFAULT 0,
-    is_seeker tinyint DEFAULT 0,
-    is_mystic tinyint DEFAULT 0,
-    is_rogue tinyint DEFAULT 0, 
-    is_survivor tinyint DEFAULT 0,
-    is_weakness tinyint DEFAULT 0,    
+    cost tinyint,			# resource cost to play 
+    exp tinyint, 			# experience pts
+    sub_type tinyint, 		# 0 = asset, 1 = event, 2 = skill , 3 = treachery (weakness)
+	is_guardian tinyint, 
+    is_seeker tinyint,
+    is_mystic tinyint,
+    is_rogue tinyint, 
+    is_survivor tinyint,
     #slot_one_hand tinyint,
     #slot_two_hands tinyint,
     #slot_one_arcane tinyint,

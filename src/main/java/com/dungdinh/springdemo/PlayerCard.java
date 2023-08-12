@@ -25,15 +25,12 @@ public class PlayerCard {
 	
 	@OneToOne
     @PrimaryKeyJoinColumn	
-    private CardBase card_base;
+    private Card card;
+	public String getTitle() { return card.getTitle(); }
+	public String getFrontUrl() { return card.getFrontUrl(); }
+	public String getBackUrl() { return card.getBackUrl(); }
 	
-    public String getTitle() { return card_base.getTitle(); };
-    public void setTitle(String v) { card_base.setTitle(v); };
-    
-    public String getFrontUrl() { return card_base.getFrontUrl();};
-    public String getBackUrl() { return card_base.getBackUrl();};
 	
-    
 	@Column(name="cost")
 	protected int cost; 
 	public int getCost() { return cost; }
@@ -45,60 +42,52 @@ public class PlayerCard {
 	public void setExp(int v) { exp = v; }
 
 	//
-	// 0 = asset, 1 = event, 2 = skill , 3 = treachery (weakness), 4 = investigator 
+	// 0 = asset, 1 = event, 2 = skill , 3 = treachery (weakness)
+	//	
 	@Column(name="sub_type")
-    protected int sub_type; 		
-	public int getSubType() { return sub_type; }
-	public void setSubType(int v) { sub_type = v; }
+    protected int subType; 		
+	public int getSubType() { return subType; }
+	public void setSubType(int v) { subType = v; }
 	
 	@Column(name="is_guardian")
-	protected int is_guardian;
-	public int getIsGuardian() { return is_guardian; }
-	public void setIsGuardian(int v) { is_guardian = v; }
+	protected int isGuardian;
+	public int getIsGuardian() { return isGuardian; }
+	public void setIsGuardian(int v) { isGuardian = v; }
 
 	@Column(name="is_seeker")
-	protected int is_seeker;
-	public int getIsSeeker() { return is_seeker; }
-	public void setIsSeeker(int v) { is_seeker = v; }
+	protected int isSeeker;
+	public int getIsSeeker() { return isSeeker; }
+	public void setIsSeeker(int v) { isSeeker = v; }
 
-	@Column(name="is_rouge")
-	protected int is_rouge;
-	public int getIsRouge() { return is_rouge; }
-	public void setIsRouge(int v) { is_rouge = v; }
+	@Column(name="is_rogue")
+	protected int isRogue;
+	public int getIsRogue() { return isRogue; }
+	public void setIsRogue(int v) { isRogue = v; }
 	
 	@Column(name="is_mystic")
-	protected int is_mystic;
-	public int getIsMystic() { return is_mystic; }
-	public void setIsMystic(int v) { is_mystic = v; }
+	protected int isMystic;
+	public int getIsMystic() { return isMystic; }
+	public void setIsMystic(int v) { isMystic = v; }
 	
 	@Column(name="is_survivor")
-	protected int is_survivor;
-	public int getIsSurvivor() { return is_survivor; }
-	public void setIsSurvivor(int v) { is_survivor = v; }
-	
-	
-	// 0 = no slot, 1 = one hand, 2 = two hand, 3 = one arcane, 4 = two arcane, 5 = body, 6 = accessory, 7 = ally 
-	@Column(name="slot")
-	protected int slot; 			
-	public int getSlot() { return slot; }
-	public void setSlot(int v) { slot = v; }
-	
+	protected int isSurvivor;
+	public int getIsSurvivor() { return isSurvivor; }
+	public void setIsSurvivor(int v) { isSurvivor = v; }
 	
 	public PlayerCard(){
 	}
 	
 	public PlayerCard(
-			int id, int cost, int exp, int is_guardian, int is_seeker, int is_mystic, int is_rouge, int is_survivor, int slot)
+			int id, int cost, int exp, int isGuardian, int isSeeker, int isMystic, int isRogue, int isSurvivor)
 	{
 		this.id = id;
 		this.cost = cost;
 		this.exp = exp;
-		this.is_guardian = is_guardian;
-		this.is_seeker = is_seeker;
-		this.is_mystic = is_mystic;
-		this.is_rouge = is_rouge;
-		this.is_survivor = is_survivor;
-		this.slot = slot;
+		this.isGuardian = isGuardian;
+		this.isSeeker = isSeeker;
+		this.isMystic = isMystic;
+		this.isRogue = isRogue;
+		this.isSurvivor = isSurvivor;
 	}
 	
 }

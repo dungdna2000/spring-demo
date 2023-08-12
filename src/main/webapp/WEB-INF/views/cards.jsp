@@ -42,7 +42,8 @@ div.error_message {
 		<input type="checkbox" name="IsSeeker" value="1"/> Seeker |
 		<input type="checkbox" name="IsMystic" value="1"/> Mystic | 
 		<input type="checkbox" name="IsRouge" value="1"/> Rouge |
-		<input type="checkbox" name="IsSurvivor" value="1"/> Survivor 
+		<input type="checkbox" name="IsSurvivor" value="1"/> Survivor |
+		<input type="checkbox" name="IsNeutral" value="1"/> Neutral 
 		<input type="submit" value="Search"/>
 	</form>
 </div>
@@ -61,8 +62,8 @@ div.error_message {
                 	<br>Guardian: <c:out value="${card.isGuardian}"/>
                 	<br>Seeker: <c:out value="${card.isSeeker}"/>
                 	<br>Mystic: <c:out value="${card.isMystic}"/>
-                	<br>Rouge: <c:out value="${card.isRouge}"/>
-                	<br>Survivor: <c:out value="${card.isRouge}"/>
+                	<br>Rouge: <c:out value="${card.isRogue}"/>
+                	<br>Survivor: <c:out value="${card.isSurvivor}"/>
 
                 	<div><img class="mini" src="images/${card.frontUrl }"/></div>
                 	
