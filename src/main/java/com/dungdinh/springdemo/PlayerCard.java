@@ -73,12 +73,20 @@ public class PlayerCard {
 	protected int isSurvivor;
 	public int getIsSurvivor() { return isSurvivor; }
 	public void setIsSurvivor(int v) { isSurvivor = v; }
+
+	@Column(name="is_weakness")
+	protected int isWeakness;
+	public int getIsWeakness() { return isWeakness; }
+	public void setIsWeakness(int v) { isWeakness = v; }
+
 	
 	public PlayerCard(){
 	}
 	
 	public PlayerCard(
-			int id, int cost, int exp, int isGuardian, int isSeeker, int isMystic, int isRogue, int isSurvivor)
+			int id, int cost, int exp, 
+			int isGuardian, int isSeeker, int isMystic, int isRogue, int isSurvivor, 
+			int isWeakness)
 	{
 		this.id = id;
 		this.cost = cost;
@@ -88,6 +96,7 @@ public class PlayerCard {
 		this.isMystic = isMystic;
 		this.isRogue = isRogue;
 		this.isSurvivor = isSurvivor;
+		this.isWeakness= isWeakness;
 	}
 	
 }

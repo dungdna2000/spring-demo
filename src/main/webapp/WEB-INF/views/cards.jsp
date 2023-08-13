@@ -43,7 +43,8 @@ div.error_message {
 		<input type="checkbox" name="IsMystic" value="1"/> Mystic | 
 		<input type="checkbox" name="IsRouge" value="1"/> Rouge |
 		<input type="checkbox" name="IsSurvivor" value="1"/> Survivor |
-		<input type="checkbox" name="IsNeutral" value="1"/> Neutral 
+		<input type="checkbox" name="IsNeutral" value="1"/> Neutral |
+		<input type="checkbox" name="IsWeakness" value="1"/> Weakness
 		<input type="submit" value="Search"/>
 	</form>
 </div>
@@ -64,6 +65,7 @@ div.error_message {
                 	<br>Mystic: <c:out value="${card.isMystic}"/>
                 	<br>Rouge: <c:out value="${card.isRogue}"/>
                 	<br>Survivor: <c:out value="${card.isSurvivor}"/>
+                	<br>Weakness: <c:out value="${card.isWeakness}"/>
 
                 	<div><img class="mini" src="images/${card.frontUrl }"/></div>
                 	

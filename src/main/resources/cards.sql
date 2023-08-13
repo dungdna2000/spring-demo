@@ -15,6 +15,8 @@ INSERT INTO card(id, set_id, category, title, front_url, back_url) VALUES
  	,(1013, 1000, 0, "Dark Memory", "dark_memory.png", null)
  	,(1014, 1000, 0, "Wendy's Amulet", "wendy_amulet.png", null)
  	,(1015, 1000, 0, "Abandoned and Alone", "abandoned_and_alone.png", null)
+    
+# GUARDIAN     
  	,(1016, 1000, 0, ".45 Automatic", "45_automatic.png", null)
  	,(1017, 1000, 0, "Physical Training", "physical_training.png", null)
  	,(1018, 1000, 0, "Beat Cop", "beat_cop.png", null)
@@ -29,6 +31,8 @@ INSERT INTO card(id, set_id, category, title, front_url, back_url) VALUES
  	,(1027, 1000, 0, "Police Badge (2)", "police_badge_2.png", null)
    	,(1028, 1000, 0, "Beat Cop (2)", "beat_cop_2.png", null)
    	,(1029, 1000, 0, "Shotgun (4)", "shotgun_4.png", null)
+
+# SEEKER
    	,(1030, 1000, 0, "Magnifying Glass", "magnifying_glass.png", null)
    	,(1031, 1000, 0, "Old Book of Lore", "old_book_of_lore.png", null)
    	,(1032, 1000, 0, "Research Librarian", "research_librarian.png", null)
@@ -43,6 +47,8 @@ INSERT INTO card(id, set_id, category, title, front_url, back_url) VALUES
    	,(1041, 1000, 0, "Disc of Itzamna: Protective Amulet (2)", "disc_of_itzamna_2.png", null)
    	,(1042, 1000, 0, "Encyclopedia (2)", "encyclopedia_2.png", null)
    	,(1043, 1000, 0, "Cryptic Research (4)", "cryptic_research_4.png", null)
+    
+#ROGUE    
    	,(1044, 1000, 0, "Switchblade", "switchblade.png", null)
    	,(1045, 1000, 0, "Burglary", "burglary.png", null)
    	,(1046, 1000, 0, "Pickpocketing", "pickpocketing.png", null)

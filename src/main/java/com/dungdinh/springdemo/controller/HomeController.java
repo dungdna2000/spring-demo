@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 
-import com.dungdinh.springdemo.CardBase;
+//import com.dungdinh.springdemo.Card;
 import com.dungdinh.springdemo.PlayerCard;
 
 import com.dungdinh.springdemo.CardDAO;

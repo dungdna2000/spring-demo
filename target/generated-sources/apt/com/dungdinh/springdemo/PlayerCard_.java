@@ -18,6 +18,7 @@ public abstract class PlayerCard_ {
 	public static volatile SingularAttribute<PlayerCard, Integer> isMystic;
 	public static volatile SingularAttribute<PlayerCard, Card> card;
 	public static volatile SingularAttribute<PlayerCard, Integer> isGuardian;
+	public static volatile SingularAttribute<PlayerCard, Integer> isWeakness;
 
 	public static final String IS_SURVIVOR = "isSurvivor";
 	public static final String COST = "cost";
@@ -29,6 +30,7 @@ public abstract class PlayerCard_ {
 	public static final String IS_MYSTIC = "isMystic";
 	public static final String CARD = "card";
 	public static final String IS_GUARDIAN = "isGuardian";
+	public static final String IS_WEAKNESS = "isWeakness";
 
 }
 

@@ -8,7 +8,7 @@ INSERT INTO player_card(id,cost, exp, sub_type, is_guardian, is_seeker, is_mysti
 ,(1016, 4, 0, 0,   1, 0, 0, 0, 0 )		# .45 Automatic
 ,(1017, 2, 0, 0,   1, 0, 0, 0, 0 )		# Physical Training
 
-#WEAKNESS
+
 
 
 #SEEKER
@@ -32,4 +32,11 @@ INSERT INTO player_card(id,cost, exp, sub_type, is_guardian, is_seeker, is_mysti
 ,(1089, 0, 0, 2,   0, 0, 0, 0, 0 )		# Guts
 
 ,(8084, 1, 1, 1,   1, 1, 0, 0, 0 )		# On The Trail (1)
+;
+
+## WEAKNESS 
+INSERT INTO player_card(id,cost, exp, sub_type, is_weakness) VALUES
+ (1007, 0, 0, 0,   1 )		# Cover Up
+,(1009, 0, 0, 0,   1 )		# The Necronomicon: John Dee Translation
+
 ;

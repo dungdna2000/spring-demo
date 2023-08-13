@@ -38,15 +38,18 @@ public class CardDAO {
         
         
         if (frm.getIsGuardian()==1)
-        	 pClasses.add(cb.equal(root.get("isGuardian"), frm.getIsGuardian()));        
+        	 pClasses.add(cb.equal(root.get("isGuardian"), 1));        
         if (frm.getIsSeeker()==1)
-       	 	pClasses.add(cb.equal(root.get("isSeeker"), frm.getIsSeeker()));
+       	 	pClasses.add(cb.equal(root.get("isSeeker"), 1));
         if (frm.getIsRogue()==1)
-        	pClasses.add(cb.equal(root.get("isRouge"), frm.getIsRogue()));
+        	pClasses.add(cb.equal(root.get("isRouge"), 1));
         if (frm.getIsMystic()==1)
-        	pClasses.add(cb.equal(root.get("isMystic"), frm.getIsMystic()));
+        	pClasses.add(cb.equal(root.get("isMystic"), 1));
         if (frm.getIsSurvivor()==1)
-        	pClasses.add(cb.equal(root.get("isSurvivor"), frm.getIsSurvivor()));
+        	pClasses.add(cb.equal(root.get("isSurvivor"), 1));
+        if (frm.getIsWeakness()==1)
+        	pClasses.add(cb.equal(root.get("isWeakness"), 1));
+
         
         if (frm.getIsNeutral() == 1) {
             Predicate pNeutral = 

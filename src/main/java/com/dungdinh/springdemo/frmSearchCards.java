@@ -42,6 +42,9 @@ public class frmSearchCards {
 	public int getIsNeutral() { return isNeutral; }
 	public void setIsNeutral(int v) { isNeutral = v; }
 
+	private int isWeakness;
+	public int getIsWeakness() { return isWeakness; }
+	public void setIsWeakness(int v) { isWeakness = v; }
 	
 	public frmSearchCards() {
 		cost = -1;
@@ -52,6 +55,7 @@ public class frmSearchCards {
 		isRogue = 0;
 		isSurvivor = 0;
 		isNeutral = 0;
+		isWeakness = 0;
 	}
 	
 	public String toString() {
@@ -63,7 +67,7 @@ public class frmSearchCards {
 				"isMystic: " + isMystic + "\n" +
 				"isRouge: " + isRogue + "\n" +
 				"isSurvivor: " + isSurvivor + "\n" + 
-				"isNeutral: " + isNeutral;
-		
+				"isNeutral: " + isNeutral + "\n" + 
+				"isWeakness:" + isWeakness;
 	}
 }
