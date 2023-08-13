@@ -36,15 +36,15 @@ div.error_message {
 <div align="center">
 	<b>SEARCH</b>
 	<form action="cards" method="post">
-		Title <input type="text" name="Title"/> | 
-		Cost <input type="text" name="Cost"/>
-		<input type="checkbox" name="IsGuardian" value="1"/> Guardian |
-		<input type="checkbox" name="IsSeeker" value="1"/> Seeker |
-		<input type="checkbox" name="IsMystic" value="1"/> Mystic | 
-		<input type="checkbox" name="IsRouge" value="1"/> Rouge |
-		<input type="checkbox" name="IsSurvivor" value="1"/> Survivor |
-		<input type="checkbox" name="IsNeutral" value="1"/> Neutral |
-		<input type="checkbox" name="IsWeakness" value="1"/> Weakness
+		Title <input type="text" name="Title" value="${frmSearch.title}"/> | 
+		Cost <input type="text" name="Cost" value="${frmSearch.cost}"/>
+		<input type="checkbox" name="IsGuardian" value="1"  <c:if test="${frmSearch.isGuardian == 1}">checked</c:if> /> Guardian |
+		<input type="checkbox" name="IsSeeker" value="1" <c:if test="${frmSearch.isSeeker == 1}">checked</c:if> /> Seeker |
+		<input type="checkbox" name="IsMystic" value="1" <c:if test="${frmSearch.isMystic == 1}">checked</c:if> /> Mystic | 
+		<input type="checkbox" name="IsRogue" value="1" <c:if test="${frmSearch.isRogue == 1}">checked</c:if> /> Rouge |
+		<input type="checkbox" name="IsSurvivor" value="1" <c:if test="${frmSearch.isSurvivor == 1}">checked</c:if> /> Survivor |
+		<input type="checkbox" name="IsNeutral" value="1" <c:if test="${frmSearch.isNeutral == 1}">checked</c:if> /> Neutral |
+		<input type="checkbox" name="IsWeakness" value="1" <c:if test="${frmSearch.isWeakness == 1}">checked</c:if> /> Weakness
 		<input type="submit" value="Search"/>
 	</form>
 </div>

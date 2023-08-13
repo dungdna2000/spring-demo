@@ -42,7 +42,7 @@ public class CardDAO {
         if (frm.getIsSeeker()==1)
        	 	pClasses.add(cb.equal(root.get("isSeeker"), 1));
         if (frm.getIsRogue()==1)
-        	pClasses.add(cb.equal(root.get("isRouge"), 1));
+        	pClasses.add(cb.equal(root.get("isRogue"), 1));
         if (frm.getIsMystic()==1)
         	pClasses.add(cb.equal(root.get("isMystic"), 1));
         if (frm.getIsSurvivor()==1)
@@ -63,7 +63,7 @@ public class CardDAO {
             pClasses.add(pNeutral);
         }
         
-        Predicate pClass = null;
+        Predicate pClass = cb.or();
         if (pClasses.size()>0)
         {
         	pClass = pClasses.get(0);

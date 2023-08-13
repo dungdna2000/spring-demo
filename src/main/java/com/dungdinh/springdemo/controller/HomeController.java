@@ -60,6 +60,7 @@ public class HomeController {
         List < PlayerCard > listCards = dao.getAllCards();
 		model.addAttribute("listCards", listCards);
 		model.addAttribute("list_size", listCards.size());
+		model.addAttribute("frmSearch", new frmSearchCards());
 		return "cards";
 	}
 	
@@ -98,7 +99,7 @@ public class HomeController {
         List < PlayerCard > listCards = dao.searchCards(frm);
 		model.addAttribute("listCards", listCards);
 		model.addAttribute("list_size", listCards.size());
-		
+		model.addAttribute("frmSearch", frm);
 		return "cards";
 	}
 }
