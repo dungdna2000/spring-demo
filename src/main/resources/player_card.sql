@@ -19,7 +19,21 @@ INSERT INTO player_card(id,cost, exp, sub_type, is_guardian, is_seeker, is_mysti
 ,(1029, 5, 4, 0,   1, 0, 0, 0, 0 )		# Shotgun (4)				
 
 #SEEKER
+,(1030, 1, 0, 0,   0, 1, 0, 0, 0 )		# Magnifying Glass	 
+,(1031, 3, 0, 0,   0, 1, 0, 0, 0 )		# Old Book of Lore		 
 ,(1032, 2, 0, 0,   0, 1, 0, 0, 0 )		# Researh Librarian 
+,(1033, 4, 0, 0,   0, 1, 0, 0, 0 )		# Dr. Milan Christopher: Professor of Entomology 
+,(1034, 2, 0, 0,   0, 1, 0, 0, 0 )		# Hyperawareness	 
+,(1035, 2, 0, 0,   0, 1, 0, 0, 0 )		# Medical Texts		 
+,(1036, 1, 0, 1,   0, 1, 0, 0, 0 )		# Mind over Matter			 
+,(1037, 2, 0, 1,   0, 1, 0, 0, 0 )		# Working a Hunch				 
+,(1038, 0, 0, 1,   0, 1, 0, 0, 0 )		# Barricade	
+,(1039, 0, 0, 2,   0, 1, 0, 0, 0 )		# Deduction		
+,(1040, 0, 1, 0,   0, 1, 0, 0, 0 )		# Magnifying Glass (1)	
+,(1041, 3, 2, 0,   0, 1, 0, 0, 0 )		# Disc of Itzamna: Protective Amulet (2)		
+,(1042, 2, 2, 0,   0, 1, 0, 0, 0 )		# Encyclopedia (2)			
+,(1043, 0, 4, 1,   0, 1, 0, 0, 0 )		# Cryptic Research (4)			
+
 
 #ROGUE
 ,(1045, 2, 0, 0,   0, 0, 0, 1, 0 )		# Burglary (1)
