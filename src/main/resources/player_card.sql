@@ -36,10 +36,20 @@ INSERT INTO player_card(id,cost, exp, sub_type, is_guardian, is_seeker, is_mysti
 
 
 #ROGUE
-,(1045, 2, 0, 0,   0, 0, 0, 1, 0 )		# Burglary (1)
-,(1053, 0, 1, 2,   0, 0, 0, 1, 0 )		# Opportunist (1)
-
+,(1044, 1, 0, 0,   0, 0, 0, 1, 0 )		# Switchblade	
+,(1045, 1, 0, 0,   0, 0, 0, 1, 0 )		# Burglary
+,(1046, 2, 0, 0,   0, 0, 0, 1, 0 )		# Pickpocketing	
+,(1047, 3, 0, 0,   0, 0, 0, 1, 0 )		# .41 Derringer		
+,(1048, 6, 0, 0,   0, 0, 0, 1, 0 )		# Leo De Luca: The Louisiana Lion
+,(1049, 2, 0, 0,   0, 0, 0, 1, 0 )		# Hard Knocks
+,(1050, 2, 0, 1,   0, 0, 0, 1, 0 )		# Elusive
+,(1051, 3, 0, 1,   0, 0, 0, 1, 0 )		# Backstab	
+,(1052, 2, 0, 1,   0, 0, 0, 1, 0 )		# Sneak Attack		
+,(1053, 0, 0, 2,   0, 0, 0, 1, 0 )		# Opportunist
+,(1054, 5, 1, 0,   0, 0, 0, 1, 0 )		# Leo De Luca: The Louisiana Lion (1)
 ,(1055, 4, 1, 0,   0, 0, 0, 1, 0 )		# Cat Burglar (1)
+,(1056, 2, 3, 1,   0, 0, 0, 1, 0 )		# Sure Gamble (3)
+,(1057, 3, 4, 1,   0, 0, 0, 1, 0 )		# Hot Streak (4)
 
 # MYSTIC
 ,(1058, 0, 0, 0,   0, 0, 1, 0, 0 )		# Forbidden Knowledge

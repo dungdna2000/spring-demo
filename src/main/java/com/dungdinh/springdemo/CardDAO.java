@@ -63,7 +63,7 @@ public class CardDAO {
             pClasses.add(pNeutral);
         }
         
-        Predicate pClass = cb.or();
+        Predicate pClass = cb.or(); // pClass = false , if nothing is selected, the result should be empty 
         if (pClasses.size()>0)
         {
         	pClass = pClasses.get(0);
