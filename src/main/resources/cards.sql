@@ -5,6 +5,8 @@ INSERT INTO card(id, set_id, category, title, front_url, back_url) VALUES
 	,(1003, 1000, 0, "\"Skids\" O'Toole: The Ex-Con", "skids_otoole_front.png", "skids_otoole_back.png")
 	,(1004, 1000, 0, "Agnes Baker: The Waitress", "agnes_baker_front.png", "agnes_baker_back.png")
   	,(1005, 1000, 0, "Wendy Adams: The Urchin", "wendy_adams_front.png", "wendy_adam_back.png")
+
+#SIGNATURE CARDS
 	,(1006, 1000, 0, "Roland's .38 Special", "roland_38_special.png", null)
 	,(1007, 1000, 0, "Cover Up", "cover_up.png", null)
 	,(1008, 1000, 0, "Daisy's Tote Bag", "daisy_tote_bag.png", null)

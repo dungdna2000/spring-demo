@@ -59,7 +59,7 @@ div.error_message {
 	<div class="card-grid">
             <c:forEach items="${listCards}" var="card">
                 <div class="card-grid-item">
-                	<c:out value="${card.title}"/> [<c:out value="${card.cost}"/>]
+                	<b><c:out value="${card.title}"/></b> [<c:out value="${card.cost}"/>]
                 	<br>Guardian: <c:out value="${card.isGuardian}"/>
                 	<br>Seeker: <c:out value="${card.isSeeker}"/>
                 	<br>Mystic: <c:out value="${card.isMystic}"/>
