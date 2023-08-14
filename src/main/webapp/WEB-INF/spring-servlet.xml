@@ -18,6 +18,8 @@
 	<mvc:default-servlet-handler />	
 	<mvc:annotation-driven />
 	<mvc:resources location="WEB-INF/images/" mapping="/images/**"/>
+	<mvc:resources location="WEB-INF/icons/" mapping="/icons/**"/>
+
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

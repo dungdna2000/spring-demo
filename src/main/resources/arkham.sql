@@ -42,7 +42,7 @@ CREATE TABLE player_card(
     #slot_ally tinyint,
     #slot_accessory tinyint, 
     #slot_tarrot tinyint
-    # icon ? 
+    # icon ?
     # traits ? 
     PRIMARY KEY(id)
     #FOREIGN KEY(id) REFERENCES card(id)

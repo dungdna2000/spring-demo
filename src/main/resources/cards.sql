@@ -69,10 +69,36 @@ INSERT INTO card(id, set_id, category, title, front_url, back_url) VALUES
 # MYSTIC
    	,(1058, 1000, 0, "Forbidden Knowledge", "forbidden_knowledge.png", null)
    	,(1059, 1000, 0, "Holy Rosary", "holy_rosary.png", null)
+   	,(1060, 1000, 0, "Shrivelling", "shrivelling.png", null)
+   	,(1061, 1000, 0, "Scrying", "scrying.png", null)
+   	,(1062, 1000, 0, "Arcane Studies", "arcane_studies.png", null)
+   	,(1063, 1000, 0, "Arcane Initiate", "arcane_initiate.png", null)
+   	,(1064, 1000, 0, "Drawn to the Flame", "drawn_to_the_flame.png", null)
+   	,(1065, 1000, 0, "Ward of Protection", "ward_of_protection.png", null)
+   	,(1066, 1000, 0, "Blinding Light", "blinding_light.png", null)
+   	,(1067, 1000, 0, "Fearless", "fearless.png", null)
+   	,(1068, 1000, 0, "Mind Wipe (1)", "mind_wipe_1.png", null)
+   	,(1069, 1000, 0, "Blinding Light (2)", "blinding_light_2.png", null)
+   	,(1070, 1000, 0, "Book of Shadows (3)", "book_of_shadows_3.png", null)
+   	,(1071, 1000, 0, "Grotesque Statue (4)", "grotesque_statue_4.png", null)
+
 
 # SURVIVOR
    	,(1072, 1000, 0, "Leather Coat", "leather_coat.png", null)
    	,(1073, 1000, 0, "Scavenging", "scavenging.png", null)
+   	,(1074, 1000, 0, "Baseball Bat", "baseball_bat.png", null)
+   	,(1075, 1000, 0, "Rabbit's Foot", "rabbits_foot.png", null)
+   	,(1076, 1000, 0, "Stray Cat", "stray_cat.png", null)
+   	,(1077, 1000, 0, "Dig Deep", "dig_deep.png", null)
+   	,(1078, 1000, 0, "Cunning Distraction", "cunning_distraction.png", null)
+   	,(1079, 1000, 0, "\"Look what I found!\" ", "look_what_i_found.png", null)
+   	,(1080, 1000, 0, "Lucky!", "lucky.png", null)
+   	,(1081, 1000, 0, "Survival Instinct", "survival_instinct.png", null)
+   	,(1082, 1000, 0, "Aquinnah: The Forgotten Daughter (1)", "aquinnah_1.png", null)
+   	,(1083, 1000, 0, "Close Call (2)", "close_call_2.png", null)
+   	,(1084, 1000, 0, "Lucky! (2)", "lucky_2.png", null)
+   	,(1085, 1000, 0, "Will to Survive (3)", "will_to_survive_3.png", null)
+
 
 # NEUTRAL 
    	,(1089, 1000, 0, "Guts", "guts.png", null)
