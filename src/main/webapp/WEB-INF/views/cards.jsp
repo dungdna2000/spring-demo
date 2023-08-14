@@ -66,11 +66,11 @@ div.error_message {
 	              		<c:if test="${card.isSeeker==1}"><img src="icons/seeker.png"/></c:if>
 	              		<c:if test="${card.isMystic==1}"><img src="icons/mystic.png"/></c:if>
 	              		<c:if test="${card.isRogue==1}"><img src="icons/rogue.png"/></c:if>
-	              		<c:if test="${card.isSurvivor==1}"><img src="icons/survivor.png"/></c:if>	                	
+	              		<c:if test="${card.isSurvivor==1}"><img src="icons/survivor.png"/></c:if>
+	              		<c:forEach var="i" begin="1" end="${card.level}">*</c:forEach>	                	
 	                	</div>
+	                	${card.subTypeText}
 	                	<br>Cost:<c:out value="${card.cost}"/>
-	                	<br>Level: <c:out value="${card.exp}"/>
-	                	
 	                	<br>Weakness: <c:out value="${card.isWeakness}"/>
 					</div>
 					<div><img class="mini" src="images/${card.frontUrl }"/></div>

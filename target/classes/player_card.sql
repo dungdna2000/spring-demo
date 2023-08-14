@@ -1,7 +1,7 @@
 TRUNCATE player_card;
 
 # -1 = treachery, 0 = asset, 1 = event, 2 = skill
-INSERT INTO player_card(id,cost, exp, sub_type, is_guardian, is_seeker, is_mystic, is_rogue, is_survivor) VALUES
+INSERT INTO player_card(id,cost, card_level , sub_type, is_guardian, is_seeker, is_mystic, is_rogue, is_survivor) VALUES
 
  (1016, 4, 0, 0,   1, 0, 0, 0, 0 )		# .45 Automatic
 ,(1017, 2, 0, 0,   1, 0, 0, 0, 0 )		# Physical Training
@@ -109,7 +109,7 @@ INSERT INTO player_card(id,cost, exp, sub_type, is_guardian, is_seeker, is_mysti
 
 # sub_type: -2 = enenmy, -1 = treachery, 0 = asset, 1 = event, 2 = skill
 ## WEAKNESS 
-INSERT INTO player_card(id,cost, exp, sub_type, is_weakness) VALUES
+INSERT INTO player_card(id,cost, card_level, sub_type, is_weakness) VALUES
  (1007, 0, 0, -1,   1 )		# Cover Up
 ,(1009, 0, 0,  0,   1 )		# The Necronomicon: John Dee Translation
 ,(1011, 0, 0, -1,   1 )		# Hospital Debts 

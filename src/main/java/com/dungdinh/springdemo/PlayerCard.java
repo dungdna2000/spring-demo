@@ -36,10 +36,10 @@ public class PlayerCard {
 	public int getCost() { return cost; }
 	public void setCost(int v) { cost = v; }
 	
-	@Column(name="exp")
-	protected int exp;
-	public int getExp() { return exp; }
-	public void setExp(int v) { exp = v; }
+	@Column(name="card_level")
+	protected int level;
+	public int getLevel() { return level; }
+	public void setLevel(int v) { level = v; }
 
 	//
 	// 0 = asset, 1 = event, 2 = skill , 3 = treachery (weakness)
@@ -48,6 +48,18 @@ public class PlayerCard {
     protected int subType; 		
 	public int getSubType() { return subType; }
 	public void setSubType(int v) { subType = v; }
+	
+	public String getSubTypeText() {
+		switch (subType) {
+		case 0: return "Asset"; 
+		case 1: return "Event"; 
+		case 2: return "Skill"; 
+		case -1: return "Treachery"; 
+		case -2: return "Enemy";
+		default: 
+			return "";
+		}
+	}
 	
 	@Column(name="is_guardian")
 	protected int isGuardian;
@@ -84,13 +96,13 @@ public class PlayerCard {
 	}
 	
 	public PlayerCard(
-			int id, int cost, int exp, 
+			int id, int cost, int level, 
 			int isGuardian, int isSeeker, int isMystic, int isRogue, int isSurvivor, 
 			int isWeakness)
 	{
 		this.id = id;
 		this.cost = cost;
-		this.exp = exp;
+		this.level = level;
 		this.isGuardian = isGuardian;
 		this.isSeeker = isSeeker;
 		this.isMystic = isMystic;
