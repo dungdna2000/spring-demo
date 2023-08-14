@@ -60,8 +60,8 @@ div.error_message {
             <c:forEach items="${listCards}" var="card">
                 <div class="card-grid-item">
                    <div>
+                   	    <div>
 	                	<b><c:out value="${card.title}"/></b>
-	                	<div>
 	                	<c:if test="${card.isGuardian==1}"><img src="icons/guardian.png"/></c:if>
 	              		<c:if test="${card.isSeeker==1}"><img src="icons/seeker.png"/></c:if>
 	              		<c:if test="${card.isMystic==1}"><img src="icons/mystic.png"/></c:if>

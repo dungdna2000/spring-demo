@@ -47,10 +47,10 @@ public class CardDAO {
         	pClasses.add(cb.equal(root.get("isMystic"), 1));
         if (frm.getIsSurvivor()==1)
         	pClasses.add(cb.equal(root.get("isSurvivor"), 1));
+
         if (frm.getIsWeakness()==1)
         	pClasses.add(cb.equal(root.get("isWeakness"), 1));
-
-        
+  
         if (frm.getIsNeutral() == 1) {
             Predicate pNeutral = 
             		cb.and(

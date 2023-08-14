@@ -99,9 +99,17 @@ INSERT INTO card(id, set_id, category, title, front_url, back_url) VALUES
    	,(1084, 1000, 0, "Lucky! (2)", "lucky_2.png", null)
    	,(1085, 1000, 0, "Will to Survive (3)", "will_to_survive_3.png", null)
 
-
 # NEUTRAL 
+   	,(1086, 1000, 0, "Knife", "knife.png", null)
+   	,(1087, 1000, 0, "Flashlight", "flashlight.png", null)
+   	,(1088, 1000, 0, "Emergency Cache", "emergency_cache.png", null)
    	,(1089, 1000, 0, "Guts", "guts.png", null)
+   	,(1090, 1000, 0, "Perception", "perception.png", null)
+   	,(1091, 1000, 0, "Overpower", "overpower.png", null)
+   	,(1092, 1000, 0, "Manual Dexterity", "manual_dexterity.png", null)
+   	,(1093, 1000, 0, "Unexpected Courage", "unexpected_courage.png", null)
+   	,(1094, 1000, 0, "Bulletproof Vest (3)", "bulletproof_vest_3.png", null)
+   	,(1095, 1000, 0, "Elder Sign Amulet (3)", "elder_sign_amulet_3.png", null)
 
 # MULTICLASS 
    	,(8084, 1000, 0, "On The Trail (1)", "on_the_trail_1.png", null)

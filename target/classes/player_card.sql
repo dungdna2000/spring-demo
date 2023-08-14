@@ -83,15 +83,24 @@ INSERT INTO player_card(id,cost, exp, sub_type, is_guardian, is_seeker, is_mysti
 ,(1084, 1, 2, 1,   0, 0, 0, 0, 1 )		# Lucky! (2)
 ,(1085, 4, 3, 1,   0, 0, 0, 0, 1 )		# Will to Survive (3)
 
-# NEUTRAL
+# NEUTRAL UNIQUE
 ,(1006, 3, 0, 0,   0, 0, 0, 0, 0 )		# Roland's .38 Special
 ,(1008, 2, 0, 0,   0, 0, 0, 0, 0 )		# Daisy's Tote Bag
 ,(1010, 1, 0, 1,   0, 0, 0, 0, 0 )		# On The Lam
 ,(1012, 3, 0, 0,   0, 0, 0, 0, 0 )		# Heirloom of Hyperborea: Artifact from Another Life
 ,(1014, 2, 0, 0,   0, 0, 0, 0, 0 )		# Wendy's Amulet
 
+# NEUTRAL
+,(1086, 1, 0, 0,   0, 0, 0, 0, 0 )		# Knife
+,(1087, 2, 0, 0,   0, 0, 0, 0, 0 )		# Flashlight
+,(1088, 0, 0, 1,   0, 0, 0, 0, 0 )		# Emergency Cache
 ,(1089, 0, 0, 2,   0, 0, 0, 0, 0 )		# Guts
-
+,(1090, 0, 0, 2,   0, 0, 0, 0, 0 )		# Perception
+,(1091, 0, 0, 2,   0, 0, 0, 0, 0 )		# Overpower
+,(1092, 0, 0, 2,   0, 0, 0, 0, 0 )		# Manual Dexterity
+,(1093, 0, 0, 2,   0, 0, 0, 0, 0 )		# Unexpected Courage
+,(1094, 2, 3, 0,   0, 0, 0, 0, 0 )		# Bulletproof Vest (3)
+,(1095, 2, 3, 0,   0, 0, 0, 0, 0 )		# Elder Sign Amulet (3)
 
 # MULTI CLASS 
 ,(8084, 1, 1, 1,   1, 1, 0, 0, 0 )		# On The Trail (1)
