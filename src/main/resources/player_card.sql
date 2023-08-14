@@ -106,6 +106,8 @@ INSERT INTO player_card(id,cost, exp, sub_type, is_guardian, is_seeker, is_mysti
 ,(8084, 1, 1, 1,   1, 1, 0, 0, 0 )		# On The Trail (1)
 ;
 
+
+# sub_type: -2 = enenmy, -1 = treachery, 0 = asset, 1 = event, 2 = skill
 ## WEAKNESS 
 INSERT INTO player_card(id,cost, exp, sub_type, is_weakness) VALUES
  (1007, 0, 0, -1,   1 )		# Cover Up
@@ -113,5 +115,15 @@ INSERT INTO player_card(id,cost, exp, sub_type, is_weakness) VALUES
 ,(1011, 0, 0, -1,   1 )		# Hospital Debts 
 ,(1013, 2, 0,  1,   1 )		# Dark Memory
 ,(1015, 0, 0, -1,   1 )		# Abandon and Alone 
+
+,(1096, 0, 0, -1,   1 )		# Amnesia
+,(1097, 0, 0, -1,   1 )		# Paranoia
+,(1098, 0, 0, -1,   1 )		# Haunted
+,(1099, 0, 0, -1,   1 )		# Psychosis
+,(1100, 0, 0, -1,   1 )		# Hypochondria
+,(1101, 0, 0, -1,   1 )		# Mob Enforcer
+,(1102, 0, 0, -1,   1 )		# Silver Twilight Acolyte
+,(1103, 0, 0, -1,   1 )		# Stubborn Detective
+
 
 ;

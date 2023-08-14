@@ -111,6 +111,17 @@ INSERT INTO card(id, set_id, category, title, front_url, back_url) VALUES
    	,(1094, 1000, 0, "Bulletproof Vest (3)", "bulletproof_vest_3.png", null)
    	,(1095, 1000, 0, "Elder Sign Amulet (3)", "elder_sign_amulet_3.png", null)
 
+# WEAKNESS
+   	,(1096, 1000, 0, "Amnesia", "amnesia.png", null)
+   	,(1097, 1000, 0, "Paranoia", "paranoia.png", null)
+   	,(1098, 1000, 0, "Haunted", "haunted.png", null)
+   	,(1099, 1000, 0, "Psychosis", "psychosis.png", null)
+   	,(1100, 1000, 0, "Hypochondria", "hypochondria.png", null)
+   	,(1101, 1000, 0, "Mob Enforcer", "mob_enforcer.png", null)
+   	,(1102, 1000, 0, "Silver Twilight Acolyte", "silver_twilight_acolyte.png", null)
+   	,(1103, 1000, 0, "Stubborn Detective", "stubborn_detective.png", null)
+
+
 # MULTICLASS 
    	,(8084, 1000, 0, "On The Trail (1)", "on_the_trail_1.png", null)
 
