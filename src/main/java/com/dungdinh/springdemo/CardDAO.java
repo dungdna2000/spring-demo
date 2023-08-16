@@ -58,7 +58,12 @@ public class CardDAO {
             				cb.equal(root.get("isSeeker"), 0),
             				cb.equal(root.get("isMystic"), 0),
             				cb.equal(root.get("isRogue"), 0),
-            				cb.equal(root.get("isSurvivor"), 0)
+            				cb.equal(root.get("isSurvivor"), 0),
+            				
+            				//
+            				// All weakness cards are neutral by default, so we need to eliminate them if user only wants to show real neutral cards
+            				//
+            				cb.equal(root.get("isWeakness"), 0)				
             				);
             pClasses.add(pNeutral);
         }
