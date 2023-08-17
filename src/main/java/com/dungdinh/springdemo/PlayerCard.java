@@ -113,7 +113,7 @@ public class PlayerCard {
 	public String getTraits() {
 		String s = "";
 		for (Trait t: traits) {
-			s += t.getName();
+			s += t.getName() + ".";
 		}
 		return s;
 	}

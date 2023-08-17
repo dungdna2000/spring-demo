@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -80,6 +80,7 @@ div.error_message {
                 <div class="card-grid-item">
                    <div>
                    	    <div>
+                   	    [<c:out value="${card.id}"/>] 
 	                	<b><c:out value="${card.title}"/></b>
 	                	<c:if test="${card.isGuardian==1}"><img src="icons/guardian.png"/></c:if>
 	              		<c:if test="${card.isSeeker==1}"><img src="icons/seeker.png"/></c:if>
