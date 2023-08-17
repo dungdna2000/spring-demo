@@ -46,6 +46,10 @@ public class frmSearchCards {
 	public int getIsWeakness() { return isWeakness; }
 	public void setIsWeakness(int v) { isWeakness = v; }
 	
+	private int traitId;
+	public int getTraitId() { return traitId; }
+	public void setTraitId(int v) { traitId = v; }
+	
 	public frmSearchCards() {
 		cost = -1;
 		title = "";
@@ -56,6 +60,7 @@ public class frmSearchCards {
 		isSurvivor = 0;
 		isNeutral = 0;
 		isWeakness = 0;
+		traitId = -1;
 	}
 	
 	public String toString() {
@@ -68,6 +73,7 @@ public class frmSearchCards {
 				"isRouge: " + isRogue + "\n" +
 				"isSurvivor: " + isSurvivor + "\n" + 
 				"isNeutral: " + isNeutral + "\n" + 
-				"isWeakness:" + isWeakness;
+				"isWeakness:" + isWeakness + "\n" + 
+				"traitId:" + traitId;
 	}
 }

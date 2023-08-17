@@ -8,9 +8,11 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import jakarta.persistence.criteria.Root;
+import jakarta.persistence.criteria.Subquery;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Join;
+import jakarta.persistence.criteria.JoinType;
 import jakarta.persistence.criteria.Predicate;
 import jakarta.persistence.TypedQuery;
 
@@ -31,6 +33,24 @@ public class CardDAO {
         
         return listOfCards;
     }
+    
+    /*
+     *  Get list of traits order alphabetically 
+     */
+    public List < Trait > getAllTraits() {
+
+        Transaction transaction = null;
+        List < Trait > traits = null;
+        
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        transaction = session.beginTransaction();
+        
+        traits = session.createQuery("FROM Trait ORDER BY name", Trait.class).getResultList();
+        
+        transaction.commit();
+        
+        return traits;
+    }   
     
     private Predicate generateInvestigatorClassPredicate(frmSearchCards frm, CriteriaBuilder cb, Root<PlayerCard> root) {
 
@@ -109,7 +129,7 @@ public class CardDAO {
         
         
         root.fetch("card");
-        //cr.select(root);
+        root.fetch("traits", JoinType.LEFT);
 
         System.out.println("[INFO] frmSearchCards: \n" + frm.toString());
         
@@ -129,6 +149,30 @@ public class CardDAO {
         if (frm.getCost() >= 0) {
         	preds.add(cb.equal(root.get("cost"), frm.getCost()));
         }
+        
+        // AND frm.trait IN traits 
+        if (frm.getTraitId()>0) {
+        	
+        	Subquery<Integer> sub = cr.subquery(Integer.class);
+        	Root<PlayerCard> subRoot = sub.from(PlayerCard.class);
+            subRoot.fetch("traits");
+            
+        	sub.select(subRoot.get("id"));
+        	
+        	// WHERE trait_id = frm.traitId 
+            sub.where(
+            			cb.equal(
+            					subRoot.get("traits").get("id"),
+            					frm.getTraitId()
+            			)
+            		);
+
+            
+            preds.add(
+            			cb.in(root.get("id")).value(sub) // id IN sub-query 
+            		);
+        }
+        
         
         
         //// convert ArrayList<Predicate> to Predicate[]

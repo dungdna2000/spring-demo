@@ -21,6 +21,7 @@
     <property name="hbm2ddl.auto">none</property>
     
     <mapping class="com.dungdinh.springdemo.Card" />
+    <mapping class="com.dungdinh.springdemo.Trait" />
     <mapping class="com.dungdinh.springdemo.PlayerCard" />
 
   </session-factory>

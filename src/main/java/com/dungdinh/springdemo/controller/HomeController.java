@@ -17,7 +17,7 @@ import org.springframework.validation.ObjectError;
 
 //import com.dungdinh.springdemo.Card;
 import com.dungdinh.springdemo.PlayerCard;
-
+import com.dungdinh.springdemo.Trait;
 import com.dungdinh.springdemo.CardDAO;
 
 import com.dungdinh.springdemo.User;
@@ -57,6 +57,10 @@ public class HomeController {
 	@RequestMapping(value = "/cards", method = RequestMethod.GET)
 	public String loginPage(Locale locale, Model model) {
 		CardDAO dao = new CardDAO();
+		
+		List <Trait> traits = dao.getAllTraits();
+		model.addAttribute("traits", traits);
+				
         List < PlayerCard > listCards = dao.getAllCards();
 		model.addAttribute("listCards", listCards);
 		model.addAttribute("list_size", listCards.size());
@@ -96,7 +100,11 @@ public class HomeController {
 
 		
 		CardDAO dao = new CardDAO();
-        List < PlayerCard > listCards = dao.searchCards(frm);
+        
+		List <Trait> traits = dao.getAllTraits();
+		model.addAttribute("traits", traits);
+		
+		List < PlayerCard > listCards = dao.searchCards(frm);
 		model.addAttribute("listCards", listCards);
 		model.addAttribute("list_size", listCards.size());
 		model.addAttribute("frmSearch", frm);

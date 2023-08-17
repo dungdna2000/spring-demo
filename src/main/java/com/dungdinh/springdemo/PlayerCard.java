@@ -2,8 +2,13 @@ package com.dungdinh.springdemo;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.OneToOne;
+
+import java.util.HashSet;
+import java.util.Set;
+
 import jakarta.persistence.CascadeType;
 
 
@@ -11,6 +16,10 @@ import jakarta.persistence.CascadeType;
 //import javax.persistence.GeneratedValue;
 //import javax.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.JoinColumn;
+
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -91,6 +100,24 @@ public class PlayerCard {
 	public int getIsWeakness() { return isWeakness; }
 	public void setIsWeakness(int v) { isWeakness = v; }
 
+	
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	  @JoinTable(
+		name = "card_trait", 
+	    joinColumns = { @JoinColumn(name = "card_id") }, 
+	    inverseJoinColumns = {@JoinColumn(name = "trait_id") }
+		)
+	private Set<Trait> traits = new HashSet<>();
+	
+	
+	public String getTraits() {
+		String s = "";
+		for (Trait t: traits) {
+			s += t.getName();
+		}
+		return s;
+	}
+	
 	
 	public PlayerCard(){
 	}

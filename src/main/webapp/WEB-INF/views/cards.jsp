@@ -29,15 +29,24 @@ img.mini {
 div.error_message {
 	color: red;
 }
+
+.card-sub-type {
+	color: blue;
+}
+.weakness {
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	color: red; 
+}
 </style>
 
 </head>
 <body>
 <div align="center">
-	<b>SEARCH</b>
 	<form action="cards" method="post">
-		Title <input type="text" name="Title" value="${frmSearch.title}"/> | 
+		Title <input type="text" name="Title" value="${frmSearch.title}"/>
 		Cost <input type="text" name="Cost" value="${frmSearch.cost}"/>
+		<div>
 		<input type="checkbox" name="IsGuardian" value="1"  <c:if test="${frmSearch.isGuardian == 1}">checked</c:if> /> Guardian |
 		<input type="checkbox" name="IsSeeker" value="1" <c:if test="${frmSearch.isSeeker == 1}">checked</c:if> /> Seeker |
 		<input type="checkbox" name="IsMystic" value="1" <c:if test="${frmSearch.isMystic == 1}">checked</c:if> /> Mystic | 
@@ -45,7 +54,17 @@ div.error_message {
 		<input type="checkbox" name="IsSurvivor" value="1" <c:if test="${frmSearch.isSurvivor == 1}">checked</c:if> /> Survivor |
 		<input type="checkbox" name="IsNeutral" value="1" <c:if test="${frmSearch.isNeutral == 1}">checked</c:if> /> Neutral |
 		<input type="checkbox" name="IsWeakness" value="1" <c:if test="${frmSearch.isWeakness == 1}">checked</c:if> /> Weakness
-		<input type="submit" value="Search"/>
+		</div>
+		<div>
+		<label for="traitId">Trait</label>
+		<select id="traitId" name="traitId">
+            <option value="-1">   </option>
+            <c:forEach items="${traits}" var="tr">
+                <option value="${tr.id}" <c:if test="${frmSearch.traitId == tr.id}">selected</c:if>   >${tr.name}</option>
+			</c:forEach>
+		</select>
+		</div>
+		<div><input type="submit" value="Search"/></div>
 	</form>
 </div>
 
@@ -69,15 +88,18 @@ div.error_message {
 	              		<c:if test="${card.isSurvivor==1}"><img src="icons/survivor.png"/></c:if>
 	              		<c:forEach var="i" begin="1" end="${card.level}">*</c:forEach>	                	
 	                	</div>
-	                	${card.subTypeText}
-	                	<br>Cost:<c:out value="${card.cost}"/>
-	                	<br>Weakness: <c:out value="${card.isWeakness}"/>
+	                	<div class="card-sub-type">${card.subTypeText}</div>
+	                	<div>Cost:<c:out value="${card.cost}"/></div>
+	                	<c:if test="${card.isWeakness==1}"><span class="weakness">Weakness</span></c:if>
 					</div>
 					<div><img class="mini" src="images/${card.frontUrl }"/></div>
                 	
                 	<c:if test="${not empty card.backUrl}">
                 	<div><img class="mini" src="images/${card.backUrl }"/></div>
                 	</c:if>
+                	
+                	<div>Traits: <c:out value="${card.traits}"/></div>
+                	
                 </div>
             </c:forEach>
     </div> 

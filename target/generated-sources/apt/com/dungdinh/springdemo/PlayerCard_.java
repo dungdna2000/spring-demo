@@ -1,5 +1,6 @@
 package com.dungdinh.springdemo;
 
+import jakarta.persistence.metamodel.SetAttribute;
 import jakarta.persistence.metamodel.SingularAttribute;
 import jakarta.persistence.metamodel.StaticMetamodel;
 import javax.annotation.processing.Generated;
@@ -11,6 +12,7 @@ public abstract class PlayerCard_ {
 	public static volatile SingularAttribute<PlayerCard, Integer> isSurvivor;
 	public static volatile SingularAttribute<PlayerCard, Integer> cost;
 	public static volatile SingularAttribute<PlayerCard, Integer> isRogue;
+	public static volatile SetAttribute<PlayerCard, Trait> traits;
 	public static volatile SingularAttribute<PlayerCard, Integer> level;
 	public static volatile SingularAttribute<PlayerCard, Integer> isSeeker;
 	public static volatile SingularAttribute<PlayerCard, Integer> subType;
@@ -23,6 +25,7 @@ public abstract class PlayerCard_ {
 	public static final String IS_SURVIVOR = "isSurvivor";
 	public static final String COST = "cost";
 	public static final String IS_ROGUE = "isRogue";
+	public static final String TRAITS = "traits";
 	public static final String LEVEL = "level";
 	public static final String IS_SEEKER = "isSeeker";
 	public static final String SUB_TYPE = "subType";
