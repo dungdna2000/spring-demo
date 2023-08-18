@@ -23,22 +23,7 @@ CREATE TABLE card(
     PRIMARY KEY(id)
 );
 
-#DROP TABLE player_card;
-CREATE TABLE player_card(
-	id integer NOT NULL, 
-    cost tinyint DEFAULT 0,			# resource cost to play 
-    card_level tinyint DEFAULT 0, 	
-    sub_type tinyint DEFAULT -1, 	# -2 = enemy(weakness), -1 = treachery (weakness), 0 = asset, 1 = event, 2 = skill
-	is_guardian tinyint DEFAULT 0,
-    is_seeker tinyint DEFAULT 0,
-    is_mystic tinyint DEFAULT 0,
-    is_rogue tinyint DEFAULT 0, 
-    is_survivor tinyint DEFAULT 0,
-    is_weakness tinyint DEFAULT 0,    
 
-    PRIMARY KEY(id)
-    #FOREIGN KEY(id) REFERENCES card(id)
-);
 
 DROP TABLE trait;
 CREATE TABLE trait(
@@ -53,4 +38,19 @@ CREATE TABLE card_trait (
     trait_id integer,
     PRIMARY KEY(card_id, trait_id)
 );
+
+DROP TABLE asset_property;
+CREATE TABLE assset_property (
+	card_id integer,
+    is_one_hand tinyint DEFAULT 0,
+    is_two_hand tinyint DEFAULT 0,
+    is_one_arcane tinyint DEFAULT 0,
+    is_two_arcane tinyint DEFAULT 0,
+    is_accesory tinyint DEFAULT 0,
+    is_body tinyint DEFAULT 0,
+    is_ally tinyint DEFAULT 0,
+    is_tarot tinyint DEFAULT 0,
+    health tinyint DEFAULT 0, 
+    sanity tinyint DEFAULT 0
+)
 

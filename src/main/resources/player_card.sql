@@ -1,22 +1,50 @@
+/*
+DROP TABLE player_card;
+CREATE TABLE player_card(
+	id integer NOT NULL, 
+    cost tinyint DEFAULT 0,			# resource cost to play 
+    card_level tinyint DEFAULT 0, 	
+    sub_type tinyint DEFAULT -125, 	# -2 = enemy(weakness), -1 = treachery (weakness), 0 = asset, 1 = event, 2 = skill
+	is_guardian tinyint DEFAULT 0,
+    is_seeker tinyint DEFAULT 0,
+    is_mystic tinyint DEFAULT 0,
+    is_rogue tinyint DEFAULT 0, 
+    is_survivor tinyint DEFAULT 0,
+    is_weakness tinyint DEFAULT 0,    
+    num_willpower tinyint DEFAULT 0,
+    num_intellect tinyint DEFAULT 0,
+    num_combat tinyint DEFAULT 0,
+    num_agility tinyint DEFAULT 0,
+    num_wild tinyint DEFAULT 0,
+
+    PRIMARY KEY(id)
+    #FOREIGN KEY(id) REFERENCES card(id)
+);
+*/
+
 TRUNCATE player_card;
 
 # -1 = treachery, 0 = asset, 1 = event, 2 = skill
-INSERT INTO player_card(id,cost, card_level , sub_type, is_guardian, is_seeker, is_mystic, is_rogue, is_survivor) VALUES
+INSERT INTO player_card(
+	id,cost, card_level , sub_type, 
+    is_guardian, is_seeker, is_mystic, is_rogue, is_survivor,
+    num_willpower, num_intellect, num_combat, num_agility, num_wild
+) VALUES
 
- (1016, 4, 0, 0,   1, 0, 0, 0, 0 )		# .45 Automatic
-,(1017, 2, 0, 0,   1, 0, 0, 0, 0 )		# Physical Training
-,(1018, 4, 0, 0,   1, 0, 0, 0, 0 )		# Beat Cop
-,(1019, 2, 0, 0,   1, 0, 0, 0, 0 )		# First Aid
-,(1020, 3, 0, 0,   1, 0, 0, 0, 0 )		# Machete 
-,(1021, 3, 0, 0,   1, 0, 0, 0, 0 )		# Guard Dog
-,(1022, 1, 0, 1,   1, 0, 0, 0, 0 )		# Evidence!
-,(1023, 1, 0, 1,   1, 0, 0, 0, 0 )		# Dodge
-,(1024, 5, 0, 1,   1, 0, 0, 0, 0 )		# Dynamite Blast
-,(1025, 5, 0, 2,   1, 0, 0, 0, 0 )		# Vicious Blow
-,(1026, 2, 1, 1,   1, 0, 0, 0, 0 )		# Extra Ammunition (1)	
-,(1027, 3, 2, 0,   1, 0, 0, 0, 0 )		# Police Badge (2)		
-,(1028, 4, 2, 0,   1, 0, 0, 0, 0 )		# Beat Cop (2)			
-,(1029, 5, 4, 0,   1, 0, 0, 0, 0 )		# Shotgun (4)				
+ (1016, 4, 0, 0,   1, 0, 0, 0, 0 , 0, 0, 0, 1, 0 )		# .45 Automatic
+,(1017, 2, 0, 0,   1, 0, 0, 0, 0 , 1, 0, 1, 0, 0 )		# Physical Training
+,(1018, 4, 0, 0,   1, 0, 0, 0, 0 , 0, 0, 1, 0, 0 )		# Beat Cop
+,(1019, 2, 0, 0,   1, 0, 0, 0, 0 , 1, 0, 0, 0, 0 )		# First Aid
+,(1020, 3, 0, 0,   1, 0, 0, 0, 0 , 0, 0, 1, 0, 0 )		# Machete 
+,(1021, 3, 0, 0,   1, 0, 0, 0, 0 , 0, 0, 1, 0, 0 )		# Guard Dog
+,(1022, 1, 0, 1,   1, 0, 0, 0, 0 , 0, 2, 0, 0, 0 )		# Evidence!
+,(1023, 1, 0, 1,   1, 0, 0, 0, 0 , 1, 0, 0, 1, 0 )		# Dodge
+,(1024, 5, 0, 1,   1, 0, 0, 0, 0 , 1, 0, 0, 0, 0 )		# Dynamite Blast
+,(1025, 5, 0, 2,   1, 0, 0, 0, 0 , 0, 0, 1, 0, 0 )		# Vicious Blow
+,(1026, 2, 1, 1,   1, 0, 0, 0, 0 , 0, 1, 0, 0, 0 )		# Extra Ammunition (1)	
+,(1027, 3, 2, 0,   1, 0, 0, 0, 0 , 1, 0, 0, 0, 1 )		# Police Badge (2)		
+,(1028, 4, 2, 0,   1, 0, 0, 0, 0 , 0, 0, 1, 1, 0 )		# Beat Cop (2)			
+,(1029, 5, 4, 0,   1, 0, 0, 0, 0 , 0, 0, 2, 0, 0 )		# Shotgun (4)				
 
 #SEEKER
 ,(1030, 1, 0, 0,   0, 1, 0, 0, 0 )		# Magnifying Glass	 
@@ -121,9 +149,9 @@ INSERT INTO player_card(id,cost, card_level, sub_type, is_weakness) VALUES
 ,(1098, 0, 0, -1,   1 )		# Haunted
 ,(1099, 0, 0, -1,   1 )		# Psychosis
 ,(1100, 0, 0, -1,   1 )		# Hypochondria
-,(1101, 0, 0, -1,   1 )		# Mob Enforcer
-,(1102, 0, 0, -1,   1 )		# Silver Twilight Acolyte
-,(1103, 0, 0, -1,   1 )		# Stubborn Detective
+,(1101, 0, 0, -2,   1 )		# Mob Enforcer
+,(1102, 0, 0, -2,   1 )		# Silver Twilight Acolyte
+,(1103, 0, 0, -2,   1 )		# Stubborn Detective
 
 
 ;
