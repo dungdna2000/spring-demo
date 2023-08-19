@@ -19,6 +19,7 @@
 	<mvc:annotation-driven />
 	<mvc:resources location="WEB-INF/images/" mapping="/images/**"/>
 	<mvc:resources location="WEB-INF/icons/" mapping="/icons/**"/>
+	<mvc:resources location="WEB-INF/fonts/" mapping="/fonts/**"/>
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->

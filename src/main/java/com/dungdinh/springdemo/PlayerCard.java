@@ -100,6 +100,30 @@ public class PlayerCard {
 	public int getIsWeakness() { return isWeakness; }
 	public void setIsWeakness(int v) { isWeakness = v; }
 
+	@Column(name="num_willpower")
+	protected int numWillPower;
+	public int getNumWillPower() { return numWillPower; }
+	public void setNumWillPower(int v) { numWillPower = v; }
+
+	@Column(name="num_intellect")
+	protected int numIntellect;
+	public int getNumIntellect() { return numIntellect; }
+	public void setNumIntellect(int v) { numIntellect = v; }	
+
+	@Column(name="num_combat")
+	protected int numCombat;
+	public int getNumCombat() { return numCombat; }
+	public void setNumCombat(int v) { numCombat = v; }	
+
+	@Column(name="num_agility")
+	protected int numAgility;
+	public int getNumAgility() { return numAgility; }
+	public void setNumAgility(int v) { numAgility = v; }	
+	
+	@Column(name="num_wild")
+	protected int numWild;
+	public int getNumWild() { return numWild; }
+	public void setNumWild(int v) { numWild = v; }	
 	
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	  @JoinTable(
@@ -125,7 +149,8 @@ public class PlayerCard {
 	public PlayerCard(
 			int id, int cost, int level, 
 			int isGuardian, int isSeeker, int isMystic, int isRogue, int isSurvivor, 
-			int isWeakness)
+			int isWeakness, 
+			int numWillPower, int numIntellect, int numCombat, int numAgility, int numWild)
 	{
 		this.id = id;
 		this.cost = cost;
@@ -136,6 +161,11 @@ public class PlayerCard {
 		this.isRogue = isRogue;
 		this.isSurvivor = isSurvivor;
 		this.isWeakness= isWeakness;
+		this.numWillPower = numWillPower;
+		this.numIntellect = numIntellect;
+		this.numCombat = numCombat;
+		this.numAgility = numAgility;
+		this.numWild = numWild;
 	}
 	
 }

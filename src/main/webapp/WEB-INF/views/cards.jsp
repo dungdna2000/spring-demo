@@ -38,6 +38,19 @@ div.error_message {
 	font-family: Arial, Helvetica, sans-serif;
 	color: red; 
 }
+
+@font-face {
+    font-family: 'twilightvn';
+    src:  url('fonts/arkham-icons.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon {
+	font-family: twilightvn;
+	color: blue;
+}
+
 </style>
 
 </head>
@@ -89,6 +102,26 @@ div.error_message {
 	              		<c:if test="${card.isSurvivor==1}"><img src="icons/survivor.png"/></c:if>
 	              		<c:forEach var="i" begin="1" end="${card.level}">*</c:forEach>	                	
 	                	</div>
+	                	
+	                	<div>
+	                	<c:if test="${card.numWillPower>0}" >
+	                	<span class="icon"><c:forEach var="i" begin="1" end="${card.numWillPower}">p</c:forEach></span>
+	                	</c:if>
+	                	<c:if test="${card.numIntellect>0}" >
+	                	<span class="icon"><c:forEach var="i" begin="1" end="${card.numIntellect}">b</c:forEach></span>
+	                	</c:if>
+	                	<c:if test="${card.numCombat>0}" >
+	                	<span class="icon"><c:forEach var="i" begin="1" end="${card.numCombat}">c</c:forEach></span>
+	                	</c:if>
+	                	<c:if test="${card.numAgility>0}" >
+	                	<span class="icon"><c:forEach var="i" begin="1" end="${card.numAgility}">a</c:forEach></span>
+	                	</c:if>
+	                	<c:if test="${card.numWild>0}" >
+	                	<span class="icon"><c:forEach var="i" begin="1" end="${card.numWild}">?</c:forEach></span>
+	                	</c:if>
+
+	                	</div>
+	                	
 	                	<div class="card-sub-type">${card.subTypeText}</div>
 	                	<div>Cost:<c:out value="${card.cost}"/></div>
 	                	<c:if test="${card.isWeakness==1}"><span class="weakness">Weakness</span></c:if>

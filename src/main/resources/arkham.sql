@@ -23,8 +23,6 @@ CREATE TABLE card(
     PRIMARY KEY(id)
 );
 
-
-
 DROP TABLE trait;
 CREATE TABLE trait(
 	id integer,
